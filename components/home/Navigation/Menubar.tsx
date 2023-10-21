@@ -2,7 +2,7 @@ import Button from "@/components/common/Button"
 import {HiPlus} from "react-icons/hi"
 import {LuPanelLeft} from "react-icons/lu"
 import {useAppContext} from "@/components/AppContext"
-import {ActionType} from "@/reducers/AppReducer";
+import {ActionType} from "@/reducers/AppReducer"
 
 export default function Menubar() {
     const {dispatch} = useAppContext()

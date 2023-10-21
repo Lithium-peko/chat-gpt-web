@@ -7,7 +7,7 @@ import {useRef, useState} from "react"
 import {Message, MessageRequestBody} from "@/types/chat"
 import {useAppContext} from "@/components/AppContext"
 import {ActionType} from "@/reducers/AppReducer"
-import {useEventBusContext} from "@/components/EventBusContext";
+import {useEventBusContext} from "@/components/EventBusContext"
 
 export default function ChatInput() {
     const [messageText, setMessageText] = useState('')

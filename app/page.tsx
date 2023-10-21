@@ -2,7 +2,7 @@
 
 import Main from "@/components/home/Main"
 import Navigation from "@/components/home/Navigation"
-import {useAppContext} from "@/components/AppContext";
+import {useAppContext} from "@/components/AppContext"
 
 export default function Home() {
     const {

@@ -1,7 +1,7 @@
 import Button from "@/components/common/Button"
 import {useAppContext} from "@/components/AppContext"
-import {MdDarkMode, MdInfo, MdLightMode} from "react-icons/md";
-import {ActionType} from "@/reducers/AppReducer";
+import {MdDarkMode, MdInfo, MdLightMode} from "react-icons/md"
+import {ActionType} from "@/reducers/AppReducer"
 
 export default function Toolbar() {
     const {state: {themeMode}, dispatch} = useAppContext()

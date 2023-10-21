@@ -3,7 +3,7 @@
 import {LuPanelLeft} from "react-icons/lu"
 import Button from "@/components/common/Button"
 import {useAppContext} from "@/components/AppContext"
-import {ActionType} from "@/reducers/AppReducer";
+import {ActionType} from "@/reducers/AppReducer"
 
 export default function Menu() {
     const {

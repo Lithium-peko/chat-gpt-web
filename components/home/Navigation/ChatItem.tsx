@@ -1,8 +1,8 @@
-import {Chat} from "@/types/chat";
-import {PiChatBold, PiTrashBold} from "react-icons/pi";
-import {AiOutlineEdit} from "react-icons/ai";
-import {MdCheck, MdClose, MdDeleteOutline} from "react-icons/md";
-import React, {useEffect, useState} from "react";
+import {Chat} from "@/types/chat"
+import {PiChatBold, PiTrashBold} from "react-icons/pi"
+import {AiOutlineEdit} from "react-icons/ai"
+import {MdCheck, MdClose, MdDeleteOutline} from "react-icons/md"
+import React, {useEffect, useState} from "react"
 
 type Props = {
     item: Chat

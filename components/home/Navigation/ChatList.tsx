@@ -4,7 +4,7 @@ import {groupByDate} from "@/common/util"
 import ChatItem from "@/components/home/Navigation/ChatItem"
 import {useEventBusContext} from "@/components/EventBusContext"
 import {useAppContext} from "@/components/AppContext"
-import {ActionType} from "@/reducers/AppReducer";
+import {ActionType} from "@/reducers/AppReducer"
 
 export default function ChatList() {
     const [chatList, setChatList] = useState<Chat[]>([])

@@ -1,5 +1,4 @@
 import Menu from "@/components/home/Main/Menu"
-import Welcome from "@/components/home/Main/Welcome"
 import ChatInput from "@/components/home/Main/ChatInput"
 import MessageList from "@/components/home/Main/MessageList"
 

@@ -5,7 +5,7 @@ import {ActionType} from "@/reducers/AppReducer"
 export default function ModelSelect() {
     const models = [
         {
-            id: 'gpt-3.5-turbo',
+            id: 'gpt-35-turbo',
             name: 'GPT-3.5',
             icon: PiLightningFill
         },

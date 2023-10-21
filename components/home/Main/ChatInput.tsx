@@ -7,14 +7,22 @@ import {useEffect, useRef, useState} from "react"
 import {Message, MessageRequestBody} from "@/types/chat"
 import {useAppContext} from "@/components/AppContext"
 import {ActionType} from "@/reducers/AppReducer"
-import {useEventBusContext} from "@/components/EventBusContext"
+import {EventListener, useEventBusContext} from "@/components/EventBusContext"
 
 export default function ChatInput() {
     const [messageText, setMessageText] = useState('')
     const stopRef = useRef(false)
     const chatIdRef = useRef('')
     const {state: {messageList, currentModel, streamingId, selectedChat}, dispatch} = useAppContext()
-    const {publish} = useEventBusContext()
+    const { publish, subscribe, unsubscribe } = useEventBusContext()
+
+    useEffect(() => {
+        const callback: EventListener = (data) => {
+            send(data)
+        }
+        subscribe("createNewChat", callback)
+        return () => unsubscribe("createNewChat", callback)
+    }, [])
 
     useEffect(() => {
         if (chatIdRef.current === selectedChat?.id) {
@@ -64,11 +72,11 @@ export default function ChatInput() {
         return code === 0
     }
 
-    async function send() {
+    async function send(content: string) {
         const message = await createOrUpdateMessage({
             id: '',
             role: 'user',
-            content: messageText,
+            content,
             chatId: chatIdRef.current
         })
         dispatch({type: ActionType.ADD_MESSAGE, message})
@@ -201,7 +209,9 @@ export default function ChatInput() {
                         icon={FiSend}
                         disabled={messageText.trim() === '' || streamingId !== ''}
                         variant='primary'
-                        onClick={send}
+                        onClick={() => {
+                            send(messageText)
+                        }}
                     />
                 </div>
                 <footer className='text-center text-sm text-gray-700 dark:text-gray-300 px-4 pb-6'>

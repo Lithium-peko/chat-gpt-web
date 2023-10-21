@@ -31,7 +31,6 @@ export default function ChatList() {
             loadingRef.current = false
             return
         }
-        pageRef.current++
         const {data} = await response.json()
         hasMoreRef.current = data.hasMore
         if (pageRef.current === 1) {
@@ -39,6 +38,7 @@ export default function ChatList() {
         } else {
             setChatList((list) => list.concat(data.list))
         }
+        pageRef.current++
         loadingRef.current = false
     }
 
